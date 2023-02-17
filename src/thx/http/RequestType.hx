@@ -19,7 +19,7 @@ abstract RequestType(RequestTypeImpl) from RequestTypeImpl to RequestTypeImpl {
   @:from inline public static function fromJSBuffer(buffer : js.node.Buffer) : RequestType
     return JSBuffer(buffer);
 #elseif js
-  @:from inline public static function fromJSArrayBufferView(buffer : js.html.ArrayBufferView) : RequestType
+  @:from inline public static function fromJSArrayBufferView(buffer : js.lib.ArrayBufferView) : RequestType
     return JSArrayBufferView(buffer);
   @:from inline public static function fromJSBlob(blob : js.html.Blob) : RequestType
     return JSBlob(blob);
@@ -43,7 +43,7 @@ enum RequestTypeImpl {
   JSBuffer(buffer : js.node.Buffer);
   // TODO NodeJS pipes
 #elseif js
-  JSArrayBufferView(buffer : js.html.ArrayBufferView);
+  JSArrayBufferView(buffer : js.lib.ArrayBufferView);
   JSBlob(blob : js.html.Blob);
   JSDocument(doc : js.html.HTMLDocument);
   JSFormData(formData : js.html.FormData);

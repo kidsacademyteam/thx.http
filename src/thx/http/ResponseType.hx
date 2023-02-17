@@ -16,7 +16,7 @@ enum ResponseType<T> {
   // TODO NodeJS: Stream of String with and without encoding
   // TODO NodeJS pipes
 #elseif js
-  JSArrayBuffer : ResponseType<js.html.ArrayBuffer>;
+  JSArrayBuffer : ResponseType<js.lib.ArrayBuffer>;
   JSBlob : ResponseType<js.html.Blob>;
   JSDocument : ResponseType<js.html.HTMLDocument>;
 #end
