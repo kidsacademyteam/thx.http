@@ -53,13 +53,15 @@ class RequestInfo {
   public var headers : Headers;
   public var version : String;
   public var body : RequestType;
+  public var withCredentials : Bool;
 
-  public function new(method : Method, url : Url, ?headers : Headers, ?body : RequestType, ?version = "1.1") {
+  public function new(method : Method, url : Url, ?headers : Headers, ?body : RequestType, version = "1.1", withCredentials:Bool = false) {
     this.method = method;
     this.url = url;
     this.headers = null == headers ? Headers.empty() : headers;
     this.version = version;
     this.body = null == body ? NoBody : body;
+    this.withCredentials = withCredentials;
   }
 
   public function toString() {

@@ -11,6 +11,7 @@ using thx.promise.Promise;
 class Html5Request<T> extends Request<T> {
   public static function make<T>(requestInfo : RequestInfo, responseType : ResponseType<T>) : Request<T> {
     var request = new XMLHttpRequest();
+	request.withCredentials = requestInfo.withCredentials;
     request.responseType = switch responseType {
       case Binary: ARRAYBUFFER;
       case NoBody: NONE;
